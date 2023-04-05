@@ -11,27 +11,31 @@ import "shiba-css/docs/css/shiba.min.css";
 import "../../content/styles/customize.scss";
 
 const MainLayout = ({ children, hasFooter = true }) => (
-  <div>
-    <Helmet htmlAttributes={{ lang: siteConfig.siteLang }}>
-      <meta name="description" content={siteConfig.siteDescription} />
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="canonical" href={useSlash(siteConfig.siteUrl)} />
-    </Helmet>
-    <Navigation
-      brand={brand}
-      title={siteConfig.navTitle}
-      links={siteConfig.navLinks}
-    />
-    {children}
-    {hasFooter && (
-      <Footer
-        socials={siteConfig.socialLinks}
-        links={siteConfig.footerLinks}
-        copyright={siteConfig.copyright}
-      />
-    )}
-    <ScrollToTop color="#FFF" bgColor="grey-half" />
-  </div>
+	<div>
+		<Helmet htmlAttributes={{ lang: siteConfig.siteLang }}>
+			<meta name="description" content={siteConfig.siteDescription} />
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+			<link rel="canonical" href={useSlash(siteConfig.siteUrl)} />
+			<meta
+				name="google-site-verification"
+				content="I83ESLPhetPjpkrYKxSwRv8CNjQW1hx_zajrGpM7GUI"
+			/>
+		</Helmet>
+		<Navigation
+			brand={brand}
+			title={siteConfig.navTitle}
+			links={siteConfig.navLinks}
+		/>
+		{children}
+		{hasFooter && (
+			<Footer
+				socials={siteConfig.socialLinks}
+				links={siteConfig.footerLinks}
+				copyright={siteConfig.copyright}
+			/>
+		)}
+		<ScrollToTop color="#FFF" bgColor="grey-half" />
+	</div>
 );
 
 export default MainLayout;

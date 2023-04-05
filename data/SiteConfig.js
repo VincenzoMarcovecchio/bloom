@@ -58,22 +58,22 @@ const config = {
 	// Use for Google custom search
 	searchWidgetTitle: "Looking for?",
 	searchWidgetPlaceHolder: "Enter keyword",
-	searchEngineID: "008548374781244864787:9ybvtnkbt7o",
+	searchEngineID: "",
 	hasSearch: true,
 	// Use for links widget
 	sidebarSticky: true,
 	sidebarLinks: [
 		{
 			label: "Complete JavaScript",
-			url: "https://completejavascript.com/",
+			url: "",
 		},
 		{
-			label: "Lam Pham Blog",
-			url: "https://phamvanlam.com/",
+			label: "",
+			url: "",
 		},
 		{
-			label: "Lam Pham Portfolio",
-			url: "http://about.phamvanlam.com/",
+			label: "",
+			url: "",
 		},
 	],
 	// Use for user info
@@ -123,7 +123,7 @@ const config = {
 	socialLinks: [
 		{
 			label: "Codepen",
-			url: "https://codepen.io/completejavascript/",
+			url: "",
 			iconClassName: "fab codepen",
 		},
 		{
@@ -133,27 +133,27 @@ const config = {
 		},
 		{
 			label: "GitHub",
-			url: "https://github.com/completejavascript",
+			url: "",
 			iconClassName: "fab github",
 		},
 		{
 			label: "Facebook",
-			url: "https://www.facebook.com/completejavascript/",
+			url: "",
 			iconClassName: "fab facebook-f",
 		},
 		{
 			label: "Linkedin",
-			url: "https://www.linkedin.com/in/completejavascript/",
+			url: "",
 			iconClassName: "fab linkedin-in",
 		},
 		{
 			label: "Twitter",
-			url: "https://twitter.com/CmpltJavaScript",
+			url: "",
 			iconClassName: "fab twitter",
 		},
 		{
 			label: "RSS",
-			url: "https://gb-template.netlify.com/rss.xml",
+			url: "https://bloom-six.vercel.app/rss.xml",
 			iconClassName: "fas rss",
 		},
 	],
@@ -163,10 +163,9 @@ const config = {
 		{ label: "Contact", url: "/contact" },
 		{ label: "Terms of Use", url: "/terms" },
 		{ label: "Privacy Policy", url: "/privacy" },
-		{ label: "Sitemap", url: "https://gb-template.netlify.com/sitemap.xml" },
+		{ label: "Sitemap", url: "https://bloom-six.vercel.app/sitemap.xml" },
 	],
-	copyright:
-		"Copyright © 2019-2022 Lam Pham. Unless otherwise noted, all code MIT license.",
+	copyright: "",
 	// Use for manifest
 	themeColor: "#2196F3", // Used for setting manifest and progress theme colors.
 	backgroundColor: "#FFF", // Used for setting manifest background color.
