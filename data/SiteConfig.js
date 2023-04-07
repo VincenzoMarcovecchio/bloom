@@ -1,16 +1,16 @@
 const config = {
 	// Site info
-	siteTitle: "Gatsby Blog Template", // Site title.
-	siteTitleShort: "GB Template", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-	siteTitleAlt: "Gatsby Blog Template", // Alternative site title for SEO.
+	siteTitle: "Science Bloom", // Site title.
+	siteTitleShort: "SB", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+	siteTitleAlt: "Science Bloom", // Alternative site title for SEO.
 	siteLogo: "/logos/logo-1024x1024.png", // Logo used for SEO and manifest.
 	siteUrl: "https://sciencebloom.net", // Domain of your website without pathPrefix.
 	pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-	siteDescription: "A GatsbyJS Blog Template for blogging purpose.", // Website description used for RSS feeds/meta description tag.
+	siteDescription: "All news related to science and more", // Website description used for RSS feeds/meta description tag.
 	siteRss: "/rss.xml", // Path to the RSS file.
 	siteLang: "en",
-	siteFBAppID: "399626517562189", // FB Application ID for using app insights
-	googleAnalyticsID: "UA-96543695-7", // GA tracking ID.
+	siteFBAppID: "", // FB Application ID for using app insights
+	googleAnalyticsID: "", // GA tracking ID.
 	postDefaultCategoryID: "", // Default category for posts.
 	// Common for tag, category pages and widget
 	numberLatestPost: 8,
@@ -23,7 +23,7 @@ const config = {
 	postOnDate: "Posted on",
 	// Use for comment
 	lazyLoadComments: true,
-	disqusShortname: "gb-template", // Disqus shortname.
+	disqusShortname: "Science Bloom", // Disqus shortname.
 	btnLoadComments: "Load comments",
 	// Use for home page
 	numberLoadmore: 6,
@@ -77,39 +77,41 @@ const config = {
 		},
 	],
 	// Use for user info
-	userName: "Lam Pham", // Username to display in the author segment.
-	userEmail: "dev@completejavascript.com", // Email used for RSS feed"s author segment
-	userTwitter: "CmpltJavaScript", // Optionally renders "Follow Me" in the UserInfo segment.
-	userLocation: "Hanoi, Vietnam", // User location to display in the author segment.
+	userName: "", // Username to display in the author segment.
+	userEmail: "", // Email used for RSS feed"s author segment
+	userTwitter: "", // Optionally renders "Follow Me" in the UserInfo segment.
+	userLocation: "", // User location to display in the author segment.
 	userAvatar:
-		"https://www.gravatar.com/avatar/42fd3d526fde1ef76d5002e4ebd303e9.jpg?s=300", // User avatar to display in the author segment.
+		"", // User avatar to display in the author segment.
 	userDescription:
-		"Software Engineer, Web Developer, JavaScript Lover & Blogger @completejavascript.", // User description to display in the author segment.
+		"", // User description to display in the author segment.
 	// Links to social profiles/projects you want to display in the author segment/navigation bar.
 	userLinks: [
 		{
 			label: "Email",
-			url: "mailto:dev@completejavascript.com",
+			url: "",
 			iconClassName: "far envelope",
 		},
 		{
 			label: "Website",
-			url: "https://completejavascript.com/",
+			url: "",
 			iconClassName: "fas globe",
 		},
 		{
 			label: "Twitter",
-			url: "https://twitter.com/CmpltJavaScript",
+			url: "",
 			iconClassName: "fab twitter",
 		},
 		{
 			label: "Facebook",
-			url: "https://www.facebook.com/completejavascript/",
+			url: "",
 			iconClassName: "fab facebook-f",
 		},
 		{
 			label: "Linkedin",
-			url: "https://www.linkedin.com/in/completejavascript/",
+			url: "
+			
+			",
 			iconClassName: "fab linkedin-in",
 		},
 	],
@@ -136,6 +138,7 @@ const config = {
 			url: "",
 			iconClassName: "fab github",
 		},
+		
 		{
 			label: "Facebook",
 			url: "",
