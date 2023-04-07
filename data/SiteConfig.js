@@ -81,10 +81,8 @@ const config = {
 	userEmail: "", // Email used for RSS feed"s author segment
 	userTwitter: "", // Optionally renders "Follow Me" in the UserInfo segment.
 	userLocation: "", // User location to display in the author segment.
-	userAvatar:
-		"", // User avatar to display in the author segment.
-	userDescription:
-		"", // User description to display in the author segment.
+	userAvatar: "", // User avatar to display in the author segment.
+	userDescription: "", // User description to display in the author segment.
 	// Links to social profiles/projects you want to display in the author segment/navigation bar.
 	userLinks: [
 		{
@@ -109,9 +107,7 @@ const config = {
 		},
 		{
 			label: "Linkedin",
-			url: "
-			
-			",
+			url: "",
 			iconClassName: "fab linkedin-in",
 		},
 	],
@@ -138,7 +134,7 @@ const config = {
 			url: "",
 			iconClassName: "fab github",
 		},
-		
+
 		{
 			label: "Facebook",
 			url: "",
