@@ -1,0 +1,22 @@
+---
+template: "post"
+title: "Plants "scream" loudly in situations of stress or danger. The video"
+cover: "../images/plants-emotions.jpg"
+description: "If someone hurts a plant, it somehow "screams," but not in the same way that men do. Rather, these are crackling noises or pops in ultrasonic frequencies outside the range of human hearing that increase when the plant is under stress."
+date: "2023-04-08T08:00:00Z"
+slug: "plants-scream-loudly-in-situations-of-stress-or-danger-the-video"
+categories: 
+    - nature
+tags:
+    - plants
+
+---
+
+
+If someone hurts a plant, it somehow "screams," but not in the same way that men do. Rather, these are crackling noises or pops in ultrasonic frequencies outside the range of human hearing that increase when the plant is under stress. This, according to experts, could be one of the ways through which plants communicate their discomfort to the world around them. "Even when there is silence in an environment there are sounds that we do not hear and those sounds carry information. There are animals that can hear these sounds, so there is a possibility that a lot of acoustic interaction is occurring," explains biologist Lilach Hadany of Tel Aviv University in Israel. "Plants interact continuously with insects and other animals, and many of these organisms use sound for communication, so it would be very suboptimal for plants not to use sound." Plants under stress are not as passive as you might think. They undergo some rather dramatic changes, one of the most detectable of which (at least for us humans) is the release of some rather powerful aromas and some can even alter their color. These changes can signal danger to other nearby plants, which in response strengthen their defenses or attract animals to deal with pests that could harm the plant. But until now it was unclear whether plants emit other types of signals, such as sounds. To find out, scientists recorded tomato and tobacco plants under different conditions. First, they recorded unsolicited plants, then they recorded dehydrated plants and plants whose stems had been cut. These recordings were made first in a soundproof acoustic chamber, then in a normal greenhouse environment. Then, they trained a machine learning algorithm to distinguish between the sound produced by unsolicited plants, cut plants, and dehydrated plants. The sounds emitted by plants are like popping or ticking in a frequency too high to be perceived by humans, detectable within a radius of more than one meter. Non-stressed plants do not make much noise while, on the contrary, stressed or dehydrated plants were much noisier, emitting an average of up to about 40 noises per hour depending on the species. And water-deprived plants have a remarkable sound profile. They begin to snap more before showing visible signs of dehydration, intensifying as the plant becomes drier, before lowering when the plant withers. The algorithm was able to distinguish between these sounds, as well as the plant species that emitted them. And not just tomato and tobacco plants. The team tested a variety of plants and found that sound production appears to be a fairly common plant activity. Wheat, corn, grapes, cacti and henbit produce a noise
+
+
+<iframe width="380" height="281" src="https://www.youtube.com/embed/rAOOmhFMSok" title="Audio recording of plant sounds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+But there are still some unknowns. For example, it is not clear how sounds are produced. In previous research, dehydrated plants have been found to experience cavitation, a process by which air bubbles in the shape of the stem expand and collapse. This, in the snap of human knuckles, produces an audible snap; Something similar could happen with plants. We do not yet know if other uncomfortable conditions can also induce sound. Pathogens, attacks, UV exposure, extreme temperatures, and other adverse conditions could also cause plants to start bursting like bubble wrap. It's also unclear whether sound production is an adaptive development in plants or if it's just something that happens by accident. For us humans, the implications are quite clear; We could tune in to the distress calls of thirsty plants and water them before it becomes a problem.
