@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
 			await data.searchResults[0].results.forEach(async (link) => {
 				await createPage({
 					path: `${link.name.replace(/\s+/g, "-")}`,
-					component: path.resolve(`/src/templates/food.tsx`),
+					component: path.resolve(`/src/templates/food.jsx`),
 					context: {
 						content: link.content,
 						title: link.name,
