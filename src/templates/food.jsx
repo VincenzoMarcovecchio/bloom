@@ -19,22 +19,6 @@ function Food({ pageContext }) {
 	return (
 		<>
 			<Layout>
-				<BlogPostJsonLd
-					url={`https://www.madeofscience.com/${pageContext.title.replace(
-						/\s+/g,
-						"-"
-					)}`}
-					title={`${pageContext.title} | Made Of Science`}
-					authorName="madeofscience"
-					description={pageContext.content}
-					images={[
-						`${pageContext.image}`,
-						`${pageContext.image}`,
-						`${pageContext.image}`,
-					]}
-					datePublished="2023-02-05T08:00:00+08:00"
-					dateModified="2023-02-05T09:00:00+08:00"
-				/>
 				<section className="main-container container">
 					<div className="content-wrapper padding-top-half padding-bottom-2">
 						<header className="border-bottom border-color-light-grey">
