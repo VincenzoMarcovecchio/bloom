@@ -2,7 +2,7 @@ import React from "react";
 import { BlogPostJsonLd, GatsbySeo } from "gatsby-plugin-next-seo";
 import axios from "axios";
 import Layout from "../layout";
-function Food({ pageContext, data }) {
+function Food({ pageContext }) {
 	const [card, setCard] = React.useState([]);
 
 	React.useEffect(() => {
@@ -10,7 +10,7 @@ function Food({ pageContext, data }) {
 			let { data } = await axios.get(
 				`https://api.spoonacular.com/recipes/${pageContext.id}/card?apiKey=f130622a703b48cabbd9f6493a1ea19c`
 			);
-			await setCard(data.url);
+			setCard(data.url);
 		}
 
 		fetchData();
@@ -19,52 +19,6 @@ function Food({ pageContext, data }) {
 	return (
 		<>
 			<Layout>
-				<GatsbySeo
-					title={`${pageContext.title} | It's made of science`}
-					description={pageContext.content}
-					canonical={`https://www.madeofscience.com/${pageContext.title.replace(
-						/\s+/g,
-						"-"
-					)}`}
-					openGraph={{
-						url: `https://www.madeofscience.com/${pageContext.title.replace(
-							/\s+/g,
-							"-"
-						)}`,
-						title: `${pageContext.title}`,
-						description: `${pageContext.content}`,
-						site_name: "Made Of Science",
-						type: "article",
-						article: {
-							publishedTime: "2023-06-21T23:04:13Z",
-							modifiedTime: "2023-01-21T18:04:43Z",
-							expirationTime: "2025-12-21T22:04:11Z",
-							section: "Recipes",
-							authors: ["https://www.vincenzo.codes/about"],
-							tags: [
-								"Ricette",
-								"Ricette Abruzzesi",
-								"Cucina",
-								"cooking",
-								"homemade food",
-							],
-						},
-						images: [
-							{
-								url: `${pageContext.image}`,
-								width: 850,
-								height: 650,
-								alt: `${pageContext.title}`,
-							},
-						],
-					}}
-					twitter={{
-						handle: "Vincenzo Marcovecchio",
-						site: "www.madeofscience.com",
-						cardType: "summary_large_image",
-					}}
-				/>
-
 				<BlogPostJsonLd
 					url={`https://www.madeofscience.com/${pageContext.title.replace(
 						/\s+/g,

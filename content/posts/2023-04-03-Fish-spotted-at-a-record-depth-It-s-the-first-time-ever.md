@@ -3,9 +3,9 @@ template: "post"
 title: "Fish spotted at a record depth. It's the first time ever"
 cover: "../images/deep-sea-fish.jpg"
 description: "The Izu-Ogasawara Trench off Japan is not as deep as the famous Mariana Trench, but apparently the fish here survive at considerably greater depths."
+keywords: "Fish spotted at a record depth. It's the first time ever"
 date: "2023-04-03T12:01:00Z"
 slug: "Fish-spotted-at-a-record-depth-It-s-the-first-time-ever"
-keywords: "Fish spotted at a record depth. It's the first time ever"
 categories: 
     - science
     - nature
