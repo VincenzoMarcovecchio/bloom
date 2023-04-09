@@ -50,14 +50,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const postPageTemplate = path.resolve("src/templates/post-template.jsx");
-  const pagePageTemplate = path.resolve("src/templates/page-template.jsx");
-  const tagPageTemplate = path.resolve("src/templates/tag-template.jsx");
-  const categoryPageTemplate = path.resolve(
-    "src/templates/category-template.jsx"
-  );
-  const foodTemplate = path.resolve(`src/templates/food.jsx`);
+	const { createPage } = actions;
+	const postPageTemplate = path.resolve("src/templates/post-template.jsx");
+	const pagePageTemplate = path.resolve("src/templates/page-template.jsx");
+	const tagPageTemplate = path.resolve("src/templates/tag-template.jsx");
+	const categoryPageTemplate = path.resolve(
+		"src/templates/category-template.jsx"
+	);
+	const foodTemplate = path.resolve(`src/templates/food.jsx`);
 	const blogPageTemplate = path.resolve("src/templates/blog-template.jsx");
 
 	let query44 = async function () {
@@ -79,204 +79,204 @@ exports.createPages = async ({ graphql, actions }) => {
 		});
 	};
 
-		await query44();
+	//	await query44();
 
-  const markdownQueryResult = await graphql(
-    `
-      {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                template
-                title
-                tags
-                categories
-                date
-              }
-            }
-          }
-        }
-      }
-    `
-  );
+	const markdownQueryResult = await graphql(
+		`
+			{
+				allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+					edges {
+						node {
+							fields {
+								slug
+							}
+							frontmatter {
+								template
+								title
+								tags
+								categories
+								date
+							}
+						}
+					}
+				}
+			}
+		`
+	);
 
-  if (markdownQueryResult.errors) {
-    console.error(markdownQueryResult.errors);
-    throw markdownQueryResult.errors;
-  }
+	if (markdownQueryResult.errors) {
+		console.error(markdownQueryResult.errors);
+		throw markdownQueryResult.errors;
+	}
 
-  // Filter data
-  const tagSet = new Set();
-  const categorySet = new Set();
-  const postEdges = [];
-  const pageEdges = [];
+	// Filter data
+	const tagSet = new Set();
+	const categorySet = new Set();
+	const postEdges = [];
+	const pageEdges = [];
 
-  markdownQueryResult.data.allMarkdownRemark.edges.forEach((edge) => {
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach((tag) => {
-        tagSet.add(tag);
-      });
-    }
+	markdownQueryResult.data.allMarkdownRemark.edges.forEach((edge) => {
+		if (edge.node.frontmatter.tags) {
+			edge.node.frontmatter.tags.forEach((tag) => {
+				tagSet.add(tag);
+			});
+		}
 
-    if (edge.node.frontmatter.categories) {
-      edge.node.frontmatter.categories.forEach((category) => {
-        categorySet.add(category);
-      });
-    }
+		if (edge.node.frontmatter.categories) {
+			edge.node.frontmatter.categories.forEach((category) => {
+				categorySet.add(category);
+			});
+		}
 
-    if (edge.node.frontmatter.template === "post") {
-      postEdges.push(edge);
-    }
+		if (edge.node.frontmatter.template === "post") {
+			postEdges.push(edge);
+		}
 
-    if (edge.node.frontmatter.template === "page") {
-      pageEdges.push(edge);
-    }
-  });
+		if (edge.node.frontmatter.template === "page") {
+			pageEdges.push(edge);
+		}
+	});
 
-  // Create tagList, categoryList
-  const tagList = Array.from(tagSet);
-  const categoryList = Array.from(categorySet);
+	// Create tagList, categoryList
+	const tagList = Array.from(tagSet);
+	const categoryList = Array.from(categorySet);
 
-  // Get latest posts
-  const latestPostEdges = [];
-  postEdges.forEach((edge) => {
-    if (latestPostEdges.length < siteConfig.numberLatestPost) {
-      latestPostEdges.push(edge);
-    }
-  });
+	// Get latest posts
+	const latestPostEdges = [];
+	postEdges.forEach((edge) => {
+		if (latestPostEdges.length < siteConfig.numberLatestPost) {
+			latestPostEdges.push(edge);
+		}
+	});
 
-  // Create post page
-  postEdges.forEach((edge, index) => {
-    const nextID = index + 1 < postEdges.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : postEdges.length - 1;
-    const nextEdge = postEdges[nextID];
-    const prevEdge = postEdges[prevID];
+	// Create post page
+	postEdges.forEach((edge, index) => {
+		const nextID = index + 1 < postEdges.length ? index + 1 : 0;
+		const prevID = index - 1 >= 0 ? index - 1 : postEdges.length - 1;
+		const nextEdge = postEdges[nextID];
+		const prevEdge = postEdges[prevID];
 
-    createPage({
-      path: useSlash(edge.node.fields.slug),
-      component: postPageTemplate,
-      context: {
-        slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.frontmatter.title,
-        nextslug: nextEdge.node.fields.slug,
-        prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug,
-        tagList,
-        categoryList,
-        latestPostEdges,
-      },
-    });
-  });
+		createPage({
+			path: useSlash(edge.node.fields.slug),
+			component: postPageTemplate,
+			context: {
+				slug: edge.node.fields.slug,
+				nexttitle: nextEdge.node.frontmatter.title,
+				nextslug: nextEdge.node.fields.slug,
+				prevtitle: prevEdge.node.frontmatter.title,
+				prevslug: prevEdge.node.fields.slug,
+				tagList,
+				categoryList,
+				latestPostEdges,
+			},
+		});
+	});
 
-  // create page page
-  pageEdges.forEach((edge) => {
-    createPage({
-      path: useSlash(edge.node.fields.slug),
-      component: pagePageTemplate,
-      context: {
-        slug: edge.node.fields.slug,
-        tagList,
-        categoryList,
-        latestPostEdges,
-      },
-    });
-  });
+	// create page page
+	pageEdges.forEach((edge) => {
+		createPage({
+			path: useSlash(edge.node.fields.slug),
+			component: pagePageTemplate,
+			context: {
+				slug: edge.node.fields.slug,
+				tagList,
+				categoryList,
+				latestPostEdges,
+			},
+		});
+	});
 
-  // common config for pagination
-  const postsPerPage = siteConfig.postsPerPage;
-  const pathPrefixPagination = siteConfig.pathPrefixPagination;
+	// common config for pagination
+	const postsPerPage = siteConfig.postsPerPage;
+	const pathPrefixPagination = siteConfig.pathPrefixPagination;
 
-  // create tag page
-  tagList.forEach((tag) => {
-    const tagPosts = postEdges.filter((edge) => {
-      const tags = edge.node.frontmatter.tags;
-      return tags && tags.includes(tag);
-    });
+	// create tag page
+	tagList.forEach((tag) => {
+		const tagPosts = postEdges.filter((edge) => {
+			const tags = edge.node.frontmatter.tags;
+			return tags && tags.includes(tag);
+		});
 
-    const numTagPages = Math.ceil(tagPosts.length / postsPerPage);
-    const basePath = `${siteConfig.pathPrefixTag}/${slugify(tag)}`;
+		const numTagPages = Math.ceil(tagPosts.length / postsPerPage);
+		const basePath = `${siteConfig.pathPrefixTag}/${slugify(tag)}`;
 
-    for (let i = 0; i < numTagPages; i++) {
-      createPage({
-        path: useSlash(
-          i === 0
-            ? `${basePath}`
-            : `${basePath}${pathPrefixPagination}/${i + 1}`
-        ),
-        component: tagPageTemplate,
-        context: {
-          tag,
-          tagList,
-          categoryList,
-          latestPostEdges,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          currentPage: i + 1,
-          totalPages: numTagPages,
-        },
-      });
-    }
-  });
+		for (let i = 0; i < numTagPages; i++) {
+			createPage({
+				path: useSlash(
+					i === 0
+						? `${basePath}`
+						: `${basePath}${pathPrefixPagination}/${i + 1}`
+				),
+				component: tagPageTemplate,
+				context: {
+					tag,
+					tagList,
+					categoryList,
+					latestPostEdges,
+					limit: postsPerPage,
+					skip: i * postsPerPage,
+					currentPage: i + 1,
+					totalPages: numTagPages,
+				},
+			});
+		}
+	});
 
-  // create category page
-  categoryList.forEach((category) => {
-    const categoryPosts = postEdges.filter((edge) => {
-      const categories = edge.node.frontmatter.categories;
-      return categories && categories.includes(category);
-    });
+	// create category page
+	categoryList.forEach((category) => {
+		const categoryPosts = postEdges.filter((edge) => {
+			const categories = edge.node.frontmatter.categories;
+			return categories && categories.includes(category);
+		});
 
-    const numCategoryPages = Math.ceil(categoryPosts.length / postsPerPage);
-    const basePath = `${siteConfig.pathPrefixCategory}/${slugify(category)}`;
+		const numCategoryPages = Math.ceil(categoryPosts.length / postsPerPage);
+		const basePath = `${siteConfig.pathPrefixCategory}/${slugify(category)}`;
 
-    for (let i = 0; i < numCategoryPages; i++) {
-      createPage({
-        path: useSlash(
-          i === 0
-            ? `${basePath}`
-            : `${basePath}${pathPrefixPagination}/${i + 1}`
-        ),
-        component: categoryPageTemplate,
-        context: {
-          category,
-          tagList,
-          categoryList,
-          latestPostEdges,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          currentPage: i + 1,
-          totalPages: numCategoryPages,
-        },
-      });
-    }
-  });
+		for (let i = 0; i < numCategoryPages; i++) {
+			createPage({
+				path: useSlash(
+					i === 0
+						? `${basePath}`
+						: `${basePath}${pathPrefixPagination}/${i + 1}`
+				),
+				component: categoryPageTemplate,
+				context: {
+					category,
+					tagList,
+					categoryList,
+					latestPostEdges,
+					limit: postsPerPage,
+					skip: i * postsPerPage,
+					currentPage: i + 1,
+					totalPages: numCategoryPages,
+				},
+			});
+		}
+	});
 
-  // Create blog page
-  {
-    const numBlogPages = Math.ceil(postEdges.length / postsPerPage);
-    const basePath = siteConfig.pathPrefixBlog;
+	// Create blog page
+	{
+		const numBlogPages = Math.ceil(postEdges.length / postsPerPage);
+		const basePath = siteConfig.pathPrefixBlog;
 
-    for (let i = 0; i < numBlogPages; i++) {
-      createPage({
-        path: useSlash(
-          i === 0
-            ? `${basePath}`
-            : `${basePath}${pathPrefixPagination}/${i + 1}`
-        ),
-        component: blogPageTemplate,
-        context: {
-          tagList,
-          categoryList,
-          latestPostEdges,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          currentPage: i + 1,
-          totalPages: numBlogPages,
-        },
-      });
-    }
-  }
+		for (let i = 0; i < numBlogPages; i++) {
+			createPage({
+				path: useSlash(
+					i === 0
+						? `${basePath}`
+						: `${basePath}${pathPrefixPagination}/${i + 1}`
+				),
+				component: blogPageTemplate,
+				context: {
+					tagList,
+					categoryList,
+					latestPostEdges,
+					limit: postsPerPage,
+					skip: i * postsPerPage,
+					currentPage: i + 1,
+					totalPages: numBlogPages,
+				},
+			});
+		}
+	}
 };
