@@ -57,27 +57,27 @@ exports.createPages = async ({ graphql, actions }) => {
   const categoryPageTemplate = path.resolve(
     "src/templates/category-template.jsx"
   );
-  const blogPageTemplate = path.resolve("src/templates/blog-template.jsx");
+  const foodTemplate = path.resolve(`src/templates/food.jsx`);
+	const blogPageTemplate = path.resolve("src/templates/blog-template.jsx");
 
+	let query44 = async function () {
+		let { data } = await axios.get(
+			`https://api.spoonacular.com/food/search?apiKey=f130622a703b48cabbd9f6493a1ea19c&limit=8250`
+		);
 
-    let query44 = async function () {
-			let { data } = await axios.get(
-				`https://api.spoonacular.com/food/search?apiKey=f130622a703b48cabbd9f6493a1ea19c&limit=8250`
-			);
-
-			await data.searchResults[0].results.forEach(async (link) => {
-				await createPage({
-					path: `${link.name.replace(/\s+/g, "-")}`,
-					component: path.resolve(`/src/templates/food.jsx`),
-					context: {
-						content: link.content,
-						title: link.name,
-						image: link.image,
-						id: link.id,
-					},
-				});
+		await data.searchResults[0].results.forEach(async (link) => {
+			await createPage({
+				path: `${link.name.replace(/\s+/g, "-")}`,
+				component: foodTemplate,
+				context: {
+					content: link.content,
+					title: link.name,
+					image: link.image,
+					id: link.id,
+				},
 			});
-		};
+		});
+	};
 
 		await query44();
 
