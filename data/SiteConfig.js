@@ -1,10 +1,10 @@
 const config = {
 	// Site info
-	siteTitle: "Science Bloom", // Site title.
+	siteTitle: "It's made of science", // Site title.
 	siteTitleShort: "SB", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-	siteTitleAlt: "Science Bloom", // Alternative site title for SEO.
+	siteTitleAlt: "Made Of Science", // Alternative site title for SEO.
 	siteLogo: "/logos/logo-1024x1024.png", // Logo used for SEO and manifest.
-	siteUrl: "https://sciencebloom.net", // Domain of your website without pathPrefix.
+	siteUrl: "https://madeofscience.com", // Domain of your website without pathPrefix.
 	pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 	siteDescription: "All news related to science and more", // Website description used for RSS feeds/meta description tag.
 	siteRss: "/rss.xml", // Path to the RSS file.
@@ -152,7 +152,7 @@ const config = {
 		},
 		{
 			label: "RSS",
-			url: "https://bloom-six.vercel.app/rss.xml",
+			url: "https://madeofscience.com/rss.xml",
 			iconClassName: "fas rss",
 		},
 	],
@@ -162,7 +162,7 @@ const config = {
 		{ label: "Contact", url: "/contact" },
 		{ label: "Terms of Use", url: "/terms" },
 		{ label: "Privacy Policy", url: "/privacy" },
-		{ label: "Sitemap", url: "https://bloom-six.vercel.app/sitemap.xml" },
+		{ label: "Sitemap", url: "https://madeofscience.com/sitemap.xml" },
 	],
 	copyright: "",
 	// Use for manifest

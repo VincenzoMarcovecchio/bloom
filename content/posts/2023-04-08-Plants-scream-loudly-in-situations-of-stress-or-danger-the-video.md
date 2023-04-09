@@ -1,8 +1,8 @@
 ---
 template: "post"
-title: "Plants 'scream' loudly in situations of stress or danger. The video"
+title: "Plants &quot; scream &quot; loudly in situations of stress or danger. The video"
 cover: "../images/plants-emotions.jpg"
-description: "If someone hurts a plant, it somehow 'screams,' but not in the same way that men do. Rather, these are crackling noises or pops in ultrasonic frequencies outside the range of human hearing that increase when the plant is under stress."
+description: "If someone hurts a plant, it somehow &quot; screams, &quot; but not in the same way that men do. Rather, these are crackling noises or pops in ultrasonic frequencies outside the range of human hearing that increase when the plant is under stress."
 date: "2023-04-08T08:00:00Z"
 slug: "plants-scream-loudly-in-situations-of-stress-or-danger-the-video"
 categories: 
