@@ -2,7 +2,7 @@ const path = require("path");
 const slug = require("slug");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
-
+const axios = require(`axios`);
 const slugify = (text) => slug(text).toLowerCase();
 
 const useSlash = (slug) => {
