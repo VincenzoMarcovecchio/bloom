@@ -79,7 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
 		});
 	};
 
-		await query44();
+	//	await query44();
 
 	const markdownQueryResult = await graphql(
 		`

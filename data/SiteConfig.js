@@ -64,7 +64,7 @@ const config = {
 	sidebarSticky: true,
 	sidebarLinks: [
 		{
-			label: "Orbita",
+			label: "Live rockets departures 🚀",
 			url: "https://orbitaterrestre.vercel.app/",
 		},
 		{
