@@ -64,8 +64,8 @@ const config = {
 	sidebarSticky: true,
 	sidebarLinks: [
 		{
-			label: "",
-			url: "",
+			label: "Orbita",
+			url: "https://orbitaterrestre.vercel.app/",
 		},
 		{
 			label: "",
@@ -166,7 +166,7 @@ const config = {
 	],
 	copyright: "",
 	// Use for manifest
-	themeColor: "#2196F3", // Used for setting manifest and progress theme colors.
+	themeColor: "#4121f3", // Used for setting manifest and progress theme colors.
 	backgroundColor: "#FFF", // Used for setting manifest background color.
 };
 
