@@ -67,14 +67,6 @@ const config = {
 			label: "Live rockets departures 🚀",
 			url: "https://orbitaterrestre.vercel.app/",
 		},
-		{
-			label: "",
-			url: "",
-		},
-		{
-			label: "",
-			url: "",
-		},
 	],
 	// Use for user info
 	userName: "", // Username to display in the author segment.
@@ -166,7 +158,7 @@ const config = {
 	],
 	copyright: "",
 	// Use for manifest
-	themeColor: "#4121f3", // Used for setting manifest and progress theme colors.
+	themeColor: "#4121f3;", // Used for setting manifest and progress theme colors.
 	backgroundColor: "#FFF", // Used for setting manifest background color.
 };
 
