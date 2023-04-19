@@ -62,24 +62,24 @@ exports.createPages = async ({ graphql, actions }) => {
 
 	let query44 = async function () {
 		let { data } = await axios.get(
-			`https://api.spoonacular.com/food/search?apiKey=f130622a703b48cabbd9f6493a1ea19c&limit=8250`
+			`https://newsapi.org/v2/everything?q=Science&from=2023-04-19&sortBy=popularity&apiKey=0121e101985943d88d6b3a5ac0817273`
 		);
 
-		await data.searchResults[0].results.forEach(async (link) => {
+		await data.articles.forEach(async (link) => {
 			await createPage({
-				path: `${link.name.replace(/\s+/g, "-")}`,
+				path: `${link.title.replace(/\s+/g, "-")}`,
 				component: foodTemplate,
 				context: {
 					content: link.content,
-					title: link.name,
-					image: link.image,
-					id: link.id,
+					title: link.title,
+					image: link.urlToImage,
+					//id: link.id,
 				},
 			});
 		});
 	};
 
-	//await query44();
+	await query44();
 
 	const markdownQueryResult = await graphql(
 		`

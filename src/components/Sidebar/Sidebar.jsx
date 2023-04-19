@@ -28,7 +28,6 @@ const Sidebar = ({ tagList, categoryList, latestPostEdges, links }) => {
 					<WidgetLinks links={links} />
 				</div>
 			)}
-			<div id="feedControl">Loading...</div>
 		</aside>
 	);
 };
