@@ -8,28 +8,29 @@ import config from "../../../data/SiteConfig";
 
 const Sidebar = ({ tagList, categoryList, latestPostEdges, links }) => {
   return (
-    <aside
-      className={`sidebar-container width-full ${
-        config.sidebarSticky ? "height-full" : ""
-      }`}
-    >
-      <WidgetSearch />
+		<aside
+			className={`sidebar-container width-full ${
+				config.sidebarSticky ? "height-full" : ""
+			}`}
+		>
+			<WidgetSearch />
 
-      {latestPostEdges && (
-        <WidgetLatestPosts latestPostEdges={latestPostEdges} />
-      )}
+			{latestPostEdges && (
+				<WidgetLatestPosts latestPostEdges={latestPostEdges} />
+			)}
 
-      {categoryList && <WidgetCategory categoryList={categoryList} />}
+			{categoryList && <WidgetCategory categoryList={categoryList} />}
 
-      {tagList && <WidgetTag tagList={tagList} />}
+			{tagList && <WidgetTag tagList={tagList} />}
 
-      {links && (
-        <div className="position-sticky top-zero">
-          <WidgetLinks links={links} />
-        </div>
-      )}
-    </aside>
-  );
+			{links && (
+				<div className="position-sticky top-zero">
+					<WidgetLinks links={links} />
+				</div>
+			)}
+			<div id="feedControl">Loading...</div>
+		</aside>
+	);
 };
 
 export default Sidebar;

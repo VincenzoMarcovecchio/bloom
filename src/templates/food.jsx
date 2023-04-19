@@ -2,6 +2,7 @@ import React from "react";
 import { BlogPostJsonLd, GatsbySeo } from "gatsby-plugin-next-seo";
 import axios from "axios";
 import Layout from "../layout";
+
 function Food({ pageContext }) {
 	const [card, setCard] = React.useState([]);
 
