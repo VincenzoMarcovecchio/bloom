@@ -67,7 +67,8 @@
 		"stylefmt": "^6.0.3",
 		"stylelint": "^13.13.1",
 		"stylelint-config-standard": "^22.0.0",
-		"write-good": "^1.0.8"
+		"write-good": "^1.0.8",
+		"gatsby-plugin-next-seo": "^1.7.0"
 	},
 	"keywords": [
 		"gatsby"
