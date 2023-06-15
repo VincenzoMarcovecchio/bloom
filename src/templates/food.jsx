@@ -1,5 +1,6 @@
 import React from "react";
 import { BlogPostJsonLd, GatsbySeo } from "gatsby-plugin-next-seo";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 import Layout from "../layout";
 
@@ -19,6 +20,15 @@ function Food({ pageContext }) {
 
 	return (
 		<>
+			<Helmet>
+				<title>{pageContext.title}</title>
+				<meta
+					name="title"
+					content={`${pageContext.title} - It's made of science`}
+				/>
+				<meta name="description" content={`${pageContext.content}`} />
+				<meta property="og:image" content={`${pageContext.image}`} />
+			</Helmet>
 			<Layout>
 				<section className="main-container container">
 					<div className="content-wrapper padding-top-half padding-bottom-2">
